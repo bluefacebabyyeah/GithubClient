@@ -5,7 +5,7 @@ import com.example.domain.models.User
 import com.example.domain.repos.IUserRepo
 import javax.inject.Inject
 
-class UserRepoL @Inject constructor(
+class UserRepo @Inject constructor(
     private val api: GithubApi
 ): IUserRepo {
     override suspend fun searchUsers(query: String): List<User> {
