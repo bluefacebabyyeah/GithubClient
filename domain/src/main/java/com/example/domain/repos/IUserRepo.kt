@@ -1,5 +1,7 @@
 package com.example.domain.repos
 
+import com.example.domain.models.User
+
 interface IUserRepo {
-    fun searchUsers(query:String): List<User>
+    suspend fun searchUsers(query:String): List<User>
 }
