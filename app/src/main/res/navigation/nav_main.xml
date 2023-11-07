@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.example.githubclient.ui.main.UsersFragment"
-        android:label="UsersFragment" />
+        android:label="UsersFragment" >
+        <action
+            android:id="@+id/action_usersFragment_to_reposFragment"
+            app:destination="@id/reposFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reposFragment"
+        android:name="com.example.githubclient.ui.main.ReposFragment"
+        android:label="ReposFragment" >
+        <argument
+            android:name="user"
+            app:argType="com.example.domain.models.User" />
+    </fragment>
 </navigation>

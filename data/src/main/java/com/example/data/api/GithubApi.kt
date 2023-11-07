@@ -14,5 +14,5 @@ interface GithubApi {
     suspend fun getFollowers(@Path("login") login:String): List<SearchUserDto.User>
 
     @GET("users/{login}/repos")
-    suspend fun getSpecificUserRepos(@Path("login") login: String): List<RepoDto.RepoDtoItem>
+    suspend fun getSpecificUserRepos(@Path("login") login: String): List<RepoDto>
 }

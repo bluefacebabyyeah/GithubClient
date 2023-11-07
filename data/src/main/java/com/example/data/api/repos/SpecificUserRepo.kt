@@ -10,6 +10,6 @@ class SpecificUserRepo@Inject constructor(
     private val api: GithubApi
 ) : ISpecificUserRepo {
     override suspend fun getSpecificUserRepo(userName: String): List<SpecificUserRepos> {
-        return api.getSpecificUserRepos(userName).mapToDomain(api)
+        return api.getSpecificUserRepos(userName).map { it.mapToDomain() }
     }
 }

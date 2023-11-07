@@ -2,17 +2,7 @@ package com.example.data.api.models
 
 import com.example.data.api.GithubApi
 import com.example.domain.models.SpecificUserRepos
-
-data class RepoDto(
-    val items: List<RepoDtoItem>
-) {
-    suspend fun mapToDomain(api: GithubApi): List<SpecificUserRepos> {
-        return items.map {
-            it.mapToDomain(api)
-        }
-    }
-
-    data class RepoDtoItem(
+ data class RepoDto(
         val allow_forking: Boolean,
         val archive_url: String,
         val archived: Boolean,
@@ -29,7 +19,7 @@ data class RepoDto(
         val created_at: String,
         val default_branch: String,
         val deployments_url: String,
-        val description: Any,
+        val description: String?,
         val disabled: Boolean,
         val downloads_url: String,
         val events_url: String,
@@ -58,7 +48,7 @@ data class RepoDto(
         val issues_url: String,
         val keys_url: String,
         val labels_url: String,
-        val language: String,
+        val language: String?,
         val languages_url: String,
         val license: Any,
         val merges_url: String,
@@ -92,16 +82,15 @@ data class RepoDto(
         val watchers_count: Int,
         val web_commit_signoff_required: Boolean
     ) {
-        suspend fun mapToDomain(api: GithubApi): SpecificUserRepos {
+        suspend fun mapToDomain(): SpecificUserRepos {
             return SpecificUserRepos(
                 name,
-                description.toString(),
+                description?:"No description",
                 updated_at,
                 default_branch,
                 forks_count.toString(),
                 stargazers_count.toString(),
-                language
+                language?:"No language"
             )
         }
     }
-}

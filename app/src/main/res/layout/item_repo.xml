@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="16dp"
+    app:contentPadding="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/repo_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_weight="4"
+                tools:text="Repository name"
+                android:ellipsize="end"
+                android:maxLines="1"
+                />
+
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Kotlin"
+                android:ellipsize="end"
+                android:maxLines="1"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:id="@+id/branch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Branch: master"
+                android:ellipsize="end"
+                android:maxLines="1"
+                />
+
+            <TextView
+                android:id="@+id/commits"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="Committed: 12.11.23"
+                android:ellipsize="end"
+                android:maxLines="12"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:id="@+id/forks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="0 forks"
+                android:ellipsize="end"
+                android:maxLines="1"
+                />
+
+            <TextView
+                android:id="@+id/stars"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="10 branches"
+                android:ellipsize="end"
+                android:maxLines="12"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="8"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae suscipit ligula. Etiam fermentum, leo cursus condimentum ullamcorper, enim orci congue tortor, ac iaculis eros quam vel velit. Vestibulum tempus euismod tellus eget bibendum. Sed pharetra velit eu sapien iaculis, viverra facilisis lorem porttitor. Duis urna lorem, ultricies at pretium eget, semper eu arcu. Vestibulum volutpat consectetur purus, sed pulvinar nisi varius sed. Nunc a auctor magna. Curabitur a nunc vel nisi fringilla lobortis eget vel quam. Aliquam dignissim ligula ac ipsum lobortis tincidunt. Nunc dapibus leo eu dui tincidunt, vitae semper turpis aliquet. Morbi pulvinar lacus non metus sodales, a hendrerit tortor pretium.
+Donec suscipit rhoncus accumsan. Nullam posuere ipsum a dapibus pharetra. Suspendisse mollis tellus in nulla congue, ut mollis ligula aliquam. Sed consectetur sagittis diam, vel efficitur massa feugiat at. Fusce scelerisque libero eget dolor maximus, non ultricies ex iaculis. Integer magna diam, laoreet a dui eu, efficitur malesuada lorem. Suspendisse eu lacus accumsan, pellentesque nunc et, congue turpis. Pellentesque imperdiet tellus eget condimentum pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas odio mi, finibus at sollicitudin ut, dictum eu elit. Donec nunc elit, lacinia a magna laoreet, varius malesuada enim. Nulla eu dolor libero.
+Aenean elementum, purus at semper porttitor, lacus elit auctor magna, in tempus nunc quam sit amet eros. In vel nisi nulla. Sed lacinia enim sapien, a pellentesque nisi faucibus ac. Etiam id dictum purus. Ut quam nulla, imperdiet id pharetra a, laoreet vel enim. Fusce vehicula ut ex id imperdiet. Aenean sed faucibus magna. Integer elit nisi, vulputate eu posuere id, iaculis vitae velit. Donec fringilla efficitur elit. Vestibulum nibh velit, fringilla at leo ac, tincidunt malesuada est. Morbi imperdiet magna erat, eu pharetra augue porttitor sed. Suspendisse euismod viverra turpis, id aliquet eros sodales sed. In interdum faucibus urna at consectetur. Maecenas non egestas arcu. Nulla mollis tortor pellentesque lorem blandit porttitor. Maecenas rhoncus neque est, eget pretium tellus tincidunt laoreet.
+Etiam mollis ex a purus fringilla, ut iaculis leo tincidunt. Sed purus lacus, rhoncus at egestas vel, placerat sed ligula. Nullam gravida massa sit amet quam tincidunt finibus. Integer tempus feugiat sapien vel vehicula. Donec eget ex posuere, pharetra elit id, interdum nibh. Suspendisse dui felis, vulputate id egestas at, dapibus sed mi. Suspendisse ullamcorper sollicitudin erat, eu tristique felis pharetra a. Mauris laoreet orci vitae arcu tempor sagittis. Cras sed vulputate velit, ut ullamcorper enim. Quisque finibus consequat lectus, a pellentesque turpis blandit vel. Donec maximus ornare arcu quis efficitur. Etiam tempor gravida euismod. Ut tellus metus, viverra quis volutpat ac, placerat sit amet tortor. Morbi in eros vitae sem congue sollicitudin. Morbi sed nisi scelerisque, fermentum velit et, mollis mauris."
+            />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

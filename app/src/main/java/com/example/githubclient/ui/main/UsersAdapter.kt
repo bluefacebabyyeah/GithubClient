@@ -20,10 +20,15 @@ class MyViewHolder(val binding: ItemUserBinding): RecyclerView.ViewHolder(bindin
         binding.followers.text = itemView.context
             .getString(R.string.followers_count, user.followersCount.toString())
         binding.username.text = user.userName.toString()
+        binding.root.setOnClickListener{
+            (bindingAdapter as UsersAdapter).onClick(user)
+        }
     }
 }
 
-class UsersAdapter: ListAdapter<User, MyViewHolder>(
+class UsersAdapter(
+    val onClick : (User)->Unit
+): ListAdapter<User, MyViewHolder>(
     object: DiffUtil.ItemCallback<User>(){
         override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
             return oldItem == newItem

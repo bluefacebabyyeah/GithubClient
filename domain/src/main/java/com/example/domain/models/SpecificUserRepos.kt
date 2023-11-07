@@ -1,6 +1,6 @@
 package com.example.domain.models
 
-class SpecificUserRepos (
+data class SpecificUserRepos (
     val name: String,
     val description: String,
     val lastDateCommit: String,

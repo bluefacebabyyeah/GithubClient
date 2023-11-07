@@ -38,7 +38,7 @@ data class SearchUserDto(
             return DomainUser(
                 login,
                 avatar_url,
-                api.getFollowers(login).size
+                0 // api.getFollowers(login).size
             )
         }
     }
