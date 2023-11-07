@@ -1,5 +1,6 @@
 package com.example.data.api
 
+import com.example.data.api.models.RepoDto
 import com.example.data.api.models.SearchUserDto
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -11,4 +12,7 @@ interface GithubApi {
             SearchUserDto
     @GET("users/{login}/followers")
     suspend fun getFollowers(@Path("login") login:String): List<SearchUserDto.User>
+
+    @GET("users/{login}/repos")
+    suspend fun getSpecificUserRepos(@Path("login") login: String): List<RepoDto.RepoDtoItem>
 }
