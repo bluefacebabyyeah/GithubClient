@@ -1,11 +1,11 @@
 package com.example.domain.models
 
-data class SpecificUserRepos (
+data class UserGithubRepositoryInfo(
     val name: String,
     val description: String,
     val lastDateCommit: String,
-    val defaultFork: String,
-    val countForks: String,
-    val starsCount: String,
+    val defaultBranch: String,
+    val countForks: Int,
+    val starsCount: Int,
     val language: String
 )

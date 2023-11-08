@@ -1,8 +1,8 @@
 package com.example.githubclient.di
 
-import com.example.data.api.repos.SpecificUserRepo
+import com.example.data.api.repos.UserGithubRepositoriesRepo
 import com.example.data.api.repos.UserRepo
-import com.example.domain.repos.ISpecificUserRepo
+import com.example.domain.repos.IUserGithubRepositoriesRepo
 import com.example.domain.repos.IUserRepo
 import dagger.Binds
 import dagger.Module
@@ -15,5 +15,5 @@ abstract class RepositoryModule {
     @Binds
     abstract fun bindUserRepo(userRepo: UserRepo): IUserRepo
     @Binds
-    abstract fun bindSpecificUserRepo(specificUserRepo: SpecificUserRepo): ISpecificUserRepo
+    abstract fun bindSpecificUserRepo(userGithubRepositoriesRepo: UserGithubRepositoriesRepo): IUserGithubRepositoriesRepo
 }

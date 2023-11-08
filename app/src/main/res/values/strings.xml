@@ -3,4 +3,7 @@
     <string name="hint_search">Search...</string>
     <string name="button_search">Search</string>
     <string name="followers_count">%1$s followers</string>
+    <string name="repo_item_forks">%1$s forks</string>
+    <string name="repo_item_stars">%1$s stars</string>
+    <string name="repo_page_title_ph">%1$s\'s repositories</string>
 </resources>

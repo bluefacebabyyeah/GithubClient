@@ -6,10 +6,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class SearchUserUseCase @Inject constructor(
+class SearchUsersUseCase @Inject constructor(
     private val userRepo: IUserRepo
 ) {
-    suspend fun searchUser(query: String): List<User>{
+    suspend fun search(query: String): List<User> {
         return withContext(Dispatchers.IO) {
             userRepo.searchUsers(query)
         }

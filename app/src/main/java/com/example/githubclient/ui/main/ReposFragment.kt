@@ -2,6 +2,8 @@ package com.example.githubclient.ui.main
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -17,14 +19,23 @@ class ReposFragment: Fragment(R.layout.fragment_repos) {
     private val adapter = ReposAdapter()
     private val viewModel by viewModels<ReposViewModel>()
     private val args by navArgs<ReposFragmentArgs>()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.list.adapter = adapter
         binding.list.layoutManager = LinearLayoutManager(requireContext())
-        binding.owner.text = args.user.userName
-        viewModel.getRepo(userName = args.user.userName)
-        viewModel.repos.observe(viewLifecycleOwner){
+        binding.owner.text = getString(R.string.repo_page_title_ph, args.user.userName)
+        viewModel.getRepos(userName = args.user.userName)
+        viewModel.repos.observe(viewLifecycleOwner) {
             adapter.submitList(it)
+        }
+        viewModel.loading.observe(viewLifecycleOwner) {
+            binding.progressLoading.isVisible = it
+        }
+        viewModel.error.observe(viewLifecycleOwner) {
+            if (it != null) {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

@@ -12,14 +12,14 @@ import com.example.domain.models.User
 import com.example.githubclient.R
 import com.example.githubclient.databinding.ItemUserBinding
 
-class MyViewHolder(val binding: ItemUserBinding): RecyclerView.ViewHolder(binding.root) {
+class MyViewHolder(private val binding: ItemUserBinding): RecyclerView.ViewHolder(binding.root) {
     fun bind(user: User){
         Glide.with(itemView.context)
             .load(user.imageUrl)
             .into(binding.avatar)
         binding.followers.text = itemView.context
             .getString(R.string.followers_count, user.followersCount.toString())
-        binding.username.text = user.userName.toString()
+        binding.username.text = user.userName
         binding.root.setOnClickListener{
             (bindingAdapter as UsersAdapter).onClick(user)
         }

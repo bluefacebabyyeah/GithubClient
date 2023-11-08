@@ -9,6 +9,6 @@ class UserRepo @Inject constructor(
     private val api: GithubApi
 ): IUserRepo {
     override suspend fun searchUsers(query: String): List<User> {
-        return api.searchUsers(query).mapToDomain(api)
+        return api.searchUsers(query).toUserList(api)
     }
 }
